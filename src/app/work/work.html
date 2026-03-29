@@ -1,0 +1,97 @@
+<div class="maincontainer">
+     <div class="navbardiv"> 
+          <nav class="glass-navbar">
+               <div class="mylogodiv">
+                    <img src="/images/logo.png" alt="MY Logo" class="mylogoimg">
+               </div>
+               <ul class="menuhead">
+                    <li class="nav-item" (click)="Home();">Home</li>
+                    <li class="nav-item" (click)="about();">About</li>
+                    <li class="nav-item active">Work</li>
+                    <li class="nav-item"><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownload" download>Resume</a></li>
+
+               </ul>
+               <div class="MenuTab" (click)="toggleMenu()">
+                    <img src="/images/icons8-menu-50.svg" alt="Menu" class="menuimg">
+               </div>
+          </nav>
+          <div class="overlay" [class.show]="isMenuOpen">
+               <div class="closemenu" (click)="closeMenu()">
+                    <img src="/images/icons8-close-50.png" alt="Menu" class="menuimg">
+               </div>
+                    <div class="overlay-content">
+                         <div class="footerlogo">
+                              <img src="images/logo.png" alt="My Logo" class="mylogoimgfooter">
+                         </div>
+                         <a (click)="Home()">Home</a>
+                         <a (click)="about()">About</a>
+                         <a (click)="mywor()">Work</a>
+                         <a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a>
+
+
+                         <div>
+                              <footer>
+                                   © {{currentYear}}. All rights reserved.
+                              </footer> 
+                         </div>
+                    </div>
+                    
+               </div>
+     </div>
+     <div class="workbanner container-fluid">
+          <div class="workbannerdiv">
+               <img src="/images/work_exp_one.jpg" alt="Work Experience" class="WorkExpImg">
+          </div>
+     </div>
+     <div class="work">
+          <div class="work_heading">
+               Work Experience
+          </div>
+          <div class="workexp_one">
+               <div class="headrole">
+                    Software Developer – PalmAgent (Real Estate Application)
+               </div>
+               <div class="company">Rifluxyss Software PVT LTD, Chennai | 2022 - 2025</div>
+               <div class="Projectdes fade-up">
+                    Worked on PalmAgent, a responsive mobile and web-based real estate app built for both general and market-specific use. Led frontend development using Angular, HTML5, CSS3, and JavaScript to deliver seamless UI across devices. Developed reusable components, integrated REST APIs, and optimized backend logic using PHP and MySQL. Also handled AWS S3 for file storage and used Lambda functions for backend automation.
+               </div>
+               <div class="headroleCont">
+                    My Contributions
+
+                    <div class="custom-list">
+                         <li>Built responsive user interfaces with Angular, React, HTML5, CSS3, and JavaScript following modern UX practices.</li>
+                         <li>Designed and developed two versions of the platform: a general site and a market-specific version, ensuring visual consistency across devices.</li>
+                         <li>Developed reusable Angular components and dynamic templates for scalable front-end development.</li>
+                         <li>Integrated RESTful APIs for cross-platform functionality and smooth data flow between mobile and web.</li>
+                         <li>Optimized backend services with PHP & MySQL, achieving 30% faster query performance through indexing and tuning.</li>
+                         <li>Managed AWS services including S3 for storage and Lambda functions for PDF generation and automation workflows.</li>
+                         <li>Collaborated with product, design, and QA teams to deliver scalable, secure, and user-friendly solutions.</li>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="footer">
+          <div class="footerlogo">
+               <img src="images/logo.png" alt="My Logo" class="mylogoimgfooter">
+               <span class="developer">Dhivagar</span>
+          </div>
+          <div class="LinkSection">
+               <div class="cursor" (click)="Home();">Home</div>
+               <div class="cursor" (click)="about();">About</div>
+               <div class="cursor" (click)="mywor()">Work</div>
+               <div class="cursor" ><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a></div>
+
+          </div>
+          <div class="mysocialdiv">
+               <a href="mailto:dhivagarg18@gmail.com" target="_blank">
+                    <img src="/images/icons8-mail-50.png" alt="Mail" class="mysocialimg" title="Mail">
+               </a>
+               <a href="https://linkedin.com/in/dhivagar-g-021189195" target="_blank">
+                    <img src="/images/icons8-linkedin-50.png" alt="LinkedIn" class="mysocialimg" title="LinkedIn">
+               </a>
+          </div>
+          <footer>
+               © {{currentYear}}. All rights reserved.
+          </footer>
+     </div> 
+</div>

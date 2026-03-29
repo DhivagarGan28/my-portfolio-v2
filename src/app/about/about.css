@@ -1,0 +1,419 @@
+.glass-navbar {
+     background: rgba(255, 255, 255, 0.15);
+     backdrop-filter: blur(12px);
+     -webkit-backdrop-filter: blur(12px);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     border-radius: 16px;
+     padding: 10px 30px;
+     display: flex;
+     gap: 32px;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+     position: relative;
+}
+
+.nav-item {
+     position: relative;
+     color: #1f2937;
+     text-decoration: none;
+     font-size: 16px;
+     font-weight: 500;
+     padding: 10px 0;
+     transition: color 0.3s ease;
+}
+
+.nav-item::after { 
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     height: 2px;
+     width: 0;
+     background-color: #2596be;
+     transition: 0.3s ease;
+     transform: translateX(-50%);
+}
+
+.nav-item:hover,
+.nav-item.active {
+     color: #2596be;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+     width: 50%;
+}
+
+.maincontainer{
+     background-color: #FFF;
+}
+.navbardiv{
+     padding: 10px;
+}
+.NavBar {
+     display: flex;
+}
+
+ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     color: #000;
+     width: 100%;
+     height: 50px;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     padding: 0px 20%;
+     gap: 20px;
+
+}
+
+li {
+     float: left;
+     font-family: 'JosefinSans-Regular';
+}
+
+.mylogoimg{
+     width: 50px;
+     height: 50px;
+     border-radius: 6px;
+}
+.mylogodiv{
+     padding-left: 3%;
+     display: flex;
+}
+.work{
+     text-align: center;
+     padding: 24px;
+}
+.work_heading{
+     font-family:  'JosefinSans-Bold';
+     font-size: 38px;
+     font-weight: 500;
+     padding-bottom: 10px;
+     color: #2596be;
+}
+.headrole{
+     font-family:  'JosefinSans-Medium';
+     font-size: 20px;
+     padding: 10px;
+}
+.workbanner{
+     width: 98%;
+     margin: auto;
+     border-radius: 6px;
+     padding: 24px 0px;
+}
+.WorkExpImg{
+     width: 100%;
+     height: auto;
+}
+.Projectdes{
+     font-family:  'JosefinSans-Regular';
+     font-size: 18px;
+     padding: 10px;
+     line-height: 150%;
+}
+.MenuTab{
+     display: none;
+}
+.menuimg{
+     width: 50%;
+     height: auto;
+}
+.footer{
+     text-align: center;
+     background-color: #2D2D2D;
+}
+footer{
+     color: #FFF;
+     padding: 24px;
+}
+.footerlogo{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+     padding-top: 24px;
+     padding-bottom: 24px;
+}
+.developer{
+     font-family: 'Poppins', sans-serif;
+     font-weight: bold;
+     font-size:20px;
+     text-transform: uppercase;
+     color: #FFFFFF;
+}
+
+.mylogoimgfooter{
+     width: 50px;
+     height: 50px;
+     border-radius: 6px;
+}
+.LinkSection{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap:50px;
+     font-family: 'SF Pro Display', 'Inter', 'Helvetica Neue', 'Segoe UI', sans-serif;
+     font-size: 16px;
+     color: #FFFFFF;
+}
+.socialmediadiv{
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+     align-items: center;
+     padding-top: 24px;
+}
+.socialmedia{
+     width: 24px;
+     height: auto;
+}
+.mysocialimg{
+     width: 20px;
+     height: auto;
+     cursor: pointer;
+}
+.mysocialdiv{
+     display: flex;
+     gap: 20px;
+     justify-content: center;
+     align-content: center;
+     align-items: center;
+     padding-top: 25px;
+}
+.resumeDownload{
+     text-decoration: none;
+     color: #000;
+}
+.resumeDownloadfo{
+     text-decoration: none;
+     color: #FFF;
+}
+.resumeDownload:hover{
+     color: #2596be;
+}
+.cursor{
+     cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+     .work{
+          padding:24px 0px 0px 0px;
+     }
+     .menuhead{
+          display: none;
+     }
+     .MenuTab{
+          display: block;
+          text-align: right;
+     }
+     .mylogoimg{
+          width: 35px;
+          height: 35px;
+     }
+     .glass-navbar{
+          padding:5px 20px;
+          align-items: center;
+          border-radius: 12px;
+          justify-content: space-between;
+     }
+     .nav-item{
+          font-size: 14px;
+     }
+     .Projectdes{
+          font-size: 18px;
+
+     }
+        .work_heading{
+          font-size: 28px;
+     }
+     .headrole{
+          font-size: 14px;
+     }
+     .company{
+          font-size: 12px;
+     }
+     .workbanner{
+          width: 95%;
+          padding: 12px 0px;
+     }
+     .LinkSection{
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 501px) and (max-width: 767px) {
+     .menuhead{
+          display: none;
+     }
+     .MenuTab{
+          display: block;
+          text-align: right;
+          
+     }
+     .mylogoimg{
+          width: 35px;
+          height: 35px;
+     }
+     .glass-navbar{
+          padding:5px 20px;
+          align-items: center;
+          border-radius: 12px;
+          justify-content: space-between;
+     }
+     .nav-item{
+          font-size: 14px;
+     }
+     .workbanner{
+          width: 95%;
+     }
+     .Projectdes{
+          font-size: 18px;
+     }
+     .work_heading{
+          font-size: 28px;
+     }
+     .headrole{
+          font-size: 16px;
+     }
+     .company{
+          font-size: 14px;
+     }
+     .LinkSection{
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+     .mylogoimg{
+          width: 40px;
+          height: 40px;
+     }
+     .glass-navbar{
+          padding:5px 20px;
+          align-items: center;
+          border-radius: 12px;
+     }
+     .nav-item{
+          font-size: 14px;
+     }
+     .Projectdes{
+          font-size: 16px;
+     }
+     .work_heading{
+          font-size: 30px;
+     }
+     .headrole{
+          font-size: 18px;
+     }
+     .company{
+          font-size: 16px;
+     }
+     .workbanner{
+          width: 97%;
+     }
+}
+@media screen and (min-width: 1400px) {
+     .maincontainer{
+          max-width:1440px;
+          margin:auto;
+     }
+} 
+
+/* Menu icon */
+.menu-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 30px;
+  height: 4px;
+  background: white;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+/* Animate into "X" */
+.menu-icon div.open:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.menu-icon div.open:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon div.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Overlay */
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #69b5d1;
+  overflow-y: hidden;
+  transition: 0.5s;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JosefinSans-Medium';
+}
+
+.overlay.show {
+  height: 100%;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.overlay-content a {
+  display: block;
+  font-size: 2rem;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.overlay.show .overlay-content a {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.overlay-content a:hover {
+  color: #ff9800;
+}
+.closemenu{
+     position: absolute;
+     top: 15px;
+     right: 8px;
+     text-align: right;
+}
+.footerlogo{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+     padding-top: 24px;
+     padding-bottom: 24px;
+}
+.mylogoimgfooter{
+     width: 50px;
+     height: 50px;
+     border-radius: 6px;
+}
+footer {
+    color: #FFF;
+    padding: 24px;
+}

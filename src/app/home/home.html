@@ -1,0 +1,192 @@
+<div class="maincontainer">
+     <div class="navbardiv"> 
+          <nav class="glass-navbar">
+               <div class="mylogodiv">
+                    <img src="/images/logo.png" alt="MY Logo" class="mylogoimg">
+               </div>
+               <ul class="menuhead">
+                    <li class="nav-item active">Home</li>
+                    <li class="nav-item" (click)="about()">About</li>
+                    <li class="nav-item" (click)="mywor()">Work</li>
+                    <li class="nav-item"><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownload" download>Resume</a></li>
+               </ul>
+               <div class="MenuTab menu-icon" (click)="toggleMenu()">
+                    <img src="/images/icons8-menu-50.svg" alt="Menu" class="menuimg">
+               </div>
+               
+          </nav>
+          <div class="overlay" [class.show]="isMenuOpen">
+               <div class="closemenu" (click)="closeMenu()">
+                    <img src="/images/icons8-close-50.png" alt="Menu" class="menuimg">
+               </div>
+                    <div class="overlay-content">
+                         <div class="footerlogo">
+                              <img src="images/logo.png" alt="My Logo" class="mylogoimgfooter">
+                         </div>
+                         <a (click)="Home()">Home</a>
+                         <a (click)="about()">About</a>
+                         <a (click)="mywor()">Work</a>
+                         <a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a>
+
+                         <div>
+                              <footer>
+                                   © {{currentYear}}. All rights reserved.
+                              </footer> 
+                         </div>
+                    </div>
+                    
+               </div>
+     </div>
+     <div>
+          <div class="content">
+               <div class="mainprofile img-zoom">
+                         <div class="MyProfileDiv"></div>
+                    </div>
+               <div class="personal">
+                    <div class="MynameHead slide-text" [@fadeIn]>Hi, I'm Dhivagar</div>
+                    <div class="fade-up pt-2" >
+                         I’m a passionate Software Developer with over 3+ years of experience in building modern, scalable web applications. Skilled in Angular, React, JavaScript, and Core PHP, I focus on writing clean, maintainable code and crafting responsive interfaces that deliver seamless user experiences. I enjoy solving complex problems, optimizing performance, and creating reliable digital solutions that make an impact.
+                    </div>
+                    
+               </div>
+               <div class="profile">
+                    <!-- <div class="myprofileimgdiv img-zoom">
+                         <img src="/images/logo_with_name.png" alt="MY Profile" class="myprofileimg">
+                    </div> -->
+                    <div class="mainprofileweb img-zoom">
+                         <div class="MyProfileDivweb"></div>
+                         
+                    </div>
+               </div>
+          </div>
+          <div class="aboutme">
+               <div class="aboutheaddiv">
+                    <div class="abouthead">About Me</div>
+               </div>
+               <div class="aboutmecontdiv">
+                    <div class="aboutmepic">
+                         <div class="myprofileimgabtdiv">
+                              <img src="/images/about_me.jpg" alt="MY Profile" class="myprofileimg">
+                         </div>
+                    </div>
+                    <div class="aboutmecontent">
+                         <div class="aboutmeconthead fade-up" #box1 [@fadeSlideIn]="showBox1 ? 'in' : 'out'"
+>
+                              Curious about me? Here you have it:
+                         </div>
+                         <div class="aboutmecontentpg" #box2 [@fadeSlideIn]="showBox2 ? 'in' : 'out'">
+                              I’ve always been fascinated by the way technology brings ideas to life, and that curiosity has grown into a career where I get to design and build meaningful solutions every day. With a strong foundation in both front-end and back-end development, I enjoy transforming concepts into intuitive, high-performing applications that people love to use.
+                              <br><br>
+                              What inspires me most about development is the blend of creativity and logic—turning complex challenges into elegant, user-friendly experiences. I thrive in environments where I can continuously learn, collaborate with others, and push my skills to the next level.
+                              <br><br>
+                              Beyond coding, I believe in building with purpose, staying adaptable in an ever-evolving tech world, and creating solutions that truly add value. For me, software development isn’t just about writing code—it’s about making ideas real and impactful.
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div>
+               <div class="skills-section">
+                    <h2 class="skills-title">My Skills</h2>
+                    
+                    <div class="scroll-container">
+                    <div class="scroll-content">
+                         
+                         <div class="skill-card">
+                         <img src="/images/html-svgrepo-com.svg" alt="HTML Logo" class="skill-logo">
+                         <div class="TextContentSk">HTML5</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/css-svgrepo-com.svg" alt="CSS Logo" class="skill-logo">
+                         <div class="TextContentSk">CSS3</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/bootstrap-logo-shadow@2x.png" alt="Angular Logo" class="skill-logo">
+                         <div class="TextContentSk">Bootstrap</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/javascript-logo-svgrepo-com.svg" alt="JavaScript Logo" class="skill-logo">
+                         <div class="TextContentSk">JavaScript</div>
+                         </div>
+                         <div class="skill-card">
+                         <img src="/images/physics.png" alt="Angular Logo" class="skill-logo">
+                         <div class="TextContentSk">React</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/angular-icon-svgrepo-com.svg" alt="Angular Logo" class="skill-logo">
+                         <div class="TextContentSk">Angular</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/php-svgrepo-com.svg" alt="PHP Logo" class="skill-logo">
+                         <div class="TextContentSk">PHP</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/wordpress-logo-svgrepo-com.svg" alt="WordPress Logo" class="skill-logo">
+                         <div class="TextContentSk">WordPress</div>
+                         </div>
+
+                         <div class="skill-card">
+                         <img src="/images/mysql-logo-svgrepo-com.svg" alt="MySQL Logo" class="skill-logo">
+                         <div class="TextContentSk">MySQL</div>
+                         </div>
+                    </div>
+                    </div>
+               </div>
+               <div class="contact-form">
+                    <div class="card p-4 container" style="width: 25rem;">
+                         <div class="card-body">
+                              <h4 class="text-center mb-4">Contact Form</h4>
+
+                              <div class="mb-3">
+                              <label class="form-label">Name</label>
+                              <input type="text" class="form-control" placeholder="Enter your name">
+                              </div>
+
+                              <div class="mb-3">
+                              <label class="form-label">Email</label>
+                              <input type="email" class="form-control" placeholder="Enter your email">
+                              </div>
+
+                              <div class="mb-3">
+                              <label class="form-label">Message</label>
+                              <textarea class="form-control" rows="3" placeholder="Enter your message"></textarea>
+                              </div>
+
+                              <div class="d-grid">
+                              <button class="btn btn-custom">Send Message</button>
+                              </div>
+
+                         </div>
+                    </div>
+               </div>
+               <div class="footer">
+                    <div class="footerlogo">
+                         <img src="images/logo.png" alt="My Logo" class="mylogoimgfooter">
+                         <span class="developer">Dhivagar</span>
+                    </div>
+                    <div class="LinkSection">
+                         <div class="cursor" (click)="Home();">Home</div>
+                         <div class="cursor" (click)="about();">About</div>
+                         <div class="cursor" (click)="mywor()">Work</div>
+                         <div class="cursor" ><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a></div>
+                    </div>
+                    <div class="mysocialdiv">
+                         <a href="mailto:dhivagarg18@gmail.com" target="_blank">
+                              <img src="/images/icons8-mail-50.png" alt="Mail" class="mysocialimg" title="Mail">
+                         </a>
+                         <a href="https://linkedin.com/in/dhivagar-g-021189195" target="_blank">
+                              <img src="/images/icons8-linkedin-50.png" alt="LinkedIn" class="mysocialimg" title="LinkedIn">
+                         </a>
+                    </div>
+                    <footer>
+                         © {{currentYear}}. All rights reserved.
+                    </footer>
+               </div> 
+          </div>
+     </div>
+</div>

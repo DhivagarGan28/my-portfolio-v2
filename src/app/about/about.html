@@ -1,0 +1,82 @@
+<div class="maincontainer">
+     <div class="navbardiv"> 
+          <nav class="glass-navbar">
+               <div class="mylogodiv">
+                    <img src="/images/logo.png" alt="MY Logo" class="mylogoimg">
+               </div>
+               <ul class="menuhead">
+                    <li class="nav-item" (click)="Home();">Home</li>
+                    <li class="nav-item active">About</li>
+                    <li class="nav-item" (click)="mywor();">Work</li>
+                    <li class="nav-item"><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownload" download>Resume</a></li>
+               </ul>
+               <div class="MenuTab"  (click)="toggleMenu()">
+                    <img src="/images/icons8-menu-50.svg" alt="Menu" class="menuimg">
+               </div>
+          </nav>
+          <div class="overlay" [class.show]="isMenuOpen">
+               <div class="closemenu" (click)="closeMenu()">
+                    <img src="/images/icons8-close-50.png" alt="Menu" class="menuimg">
+               </div>
+                    <div class="overlay-content">
+                         <div class="footerlogo">
+                              <img src="images/logo.png" alt="My Logo" class="mylogoimgfooter">
+                         </div>
+                         <a (click)="Home()">Home</a>
+                         <a (click)="about()">About</a>
+                         <a (click)="mywor()">Work</a>
+                         <a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a>
+
+                         <div>
+                              <footer>
+                                   © {{currentYear}}. All rights reserved.
+                              </footer> 
+                         </div>
+                    </div>
+                    
+               </div>
+     </div>
+     <div class="workbanner container-fluid">
+          <div class="workbannerdiv">
+               <img src="/images/pexels-goumbik-574071.jpg" alt="About" class="WorkExpImg">
+          </div>
+     </div>
+     <div class="work">
+          <div class="workexp_one">
+               <div class="work_heading">
+                    About Me
+               </div>
+               <p class="Projectdes">
+                    I'm a full-stack web developer with 3+ years of experience building modern web applications.
+                    I specialize in React, Angular for the frontend and PHP/MySQL for the backend. I enjoy solving complex problems,
+                    designing responsive UIs, and working on scalable projects.<br><br>
+
+                    Throughout my career, I have worked on various real estate and market-based applications, focusing on clean UI design, fast performance, and user-friendly experiences. I take pride in writing scalable code and delivering projects that are both functional and visually appealing. I constantly keep myself updated with the latest web technologies and enjoy learning new tools that enhance user experience and developer productivity.
+               </p>
+          </div>
+     </div>
+     <div class="footer">
+          <div class="footerlogo">
+               <img src="images/logo.png" alt="My Logo" class="mylogoimgfooter">
+               <span class="developer">Dhivagar</span>
+          </div>
+          <div class="LinkSection">
+               <div class="cursor" (click)="Home();">Home</div>
+               <div class="cursor" (click)="about();">About</div>
+               <div class="cursor" (click)="mywor()">Work</div>
+               <div class="cursor" ><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a></div>
+
+          </div>
+          <div class="mysocialdiv">
+               <a href="mailto:dhivagarg18@gmail.com" target="_blank">
+                    <img src="/images/icons8-mail-50.png" alt="Mail" class="mysocialimg" title="Mail">
+               </a>
+               <a href="https://linkedin.com/in/dhivagar-g-021189195" target="_blank">
+                    <img src="/images/icons8-linkedin-50.png" alt="LinkedIn" class="mysocialimg" title="LinkedIn">
+               </a>
+          </div>
+          <footer>
+               © {{currentYear}}. All rights reserved.
+          </footer>
+     </div> 
+</div>
