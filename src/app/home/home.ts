@@ -2,10 +2,13 @@ import { Component, AfterViewInit, ElementRef, ViewChildren , QueryList, ViewChi
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate} from '@angular/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import emailjs from 'emailjs-com';
+import { FormsModule } from '@angular/forms';
 
 @Component({
      selector: 'app-home',
-     imports: [MatTooltipModule],
+     standalone: true,
+     imports: [MatTooltipModule, FormsModule],
      templateUrl: './home.html',
      styleUrl: './home.css',
      animations: [
@@ -31,8 +34,8 @@ export class Home implements AfterViewInit{
      @ViewChild('box1') box1!: ElementRef;
      @ViewChild('box2') box2!: ElementRef;
 
-     showBox1 = false;
-     showBox2 = false;
+  showBox1: boolean = false;
+  showBox2: boolean = false;
 
      ngAfterViewInit() {
      const observer = new IntersectionObserver((entries, obs) => {
@@ -70,6 +73,32 @@ export class Home implements AfterViewInit{
      }
 
      closeMenu() {
-     this.isMenuOpen = false;
+          this.isMenuOpen = false;
+     }
+          name = '';
+          email = '';
+          message = '';
+
+          sendEmail() {
+          const templateParams = {
+               from_name: this.name,
+               from_email: this.email,
+               message: this.message
+          };
+
+          emailjs.send(
+               'service_1tc3znk',   // from EmailJS
+               'template_kbl7uih',
+               templateParams,
+               'ZyYMc7GK6jIeQZ99D'
+          ).then(
+               () => {
+               alert('Message sent successfully!');
+               },
+               (error) => {
+               console.log(error);
+               alert('Failed to send message');
+               }
+          );
      }
 }
