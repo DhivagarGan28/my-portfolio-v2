@@ -4,11 +4,11 @@ import { trigger, transition, style, animate} from '@angular/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
 @Component({
      selector: 'app-home',
      standalone: true,
-     imports: [MatTooltipModule, FormsModule],
+     imports: [MatTooltipModule, FormsModule, CommonModule],
      templateUrl: './home.html',
      styleUrl: './home.css',
      animations: [
@@ -36,6 +36,7 @@ export class Home implements AfterViewInit{
 
   showBox1: boolean = false;
   showBox2: boolean = false;
+  loader : boolean = false;
 
      ngAfterViewInit() {
      const observer = new IntersectionObserver((entries, obs) => {
@@ -78,27 +79,33 @@ export class Home implements AfterViewInit{
           name = '';
           email = '';
           message = '';
-
+          Result = false;
+          Resultfail = false;
           sendEmail() {
-          const templateParams = {
-               from_name: this.name,
-               from_email: this.email,
-               message: this.message
-          };
-
-          emailjs.send(
-               'service_1tc3znk',   // from EmailJS
-               'template_kbl7uih',
-               templateParams,
-               'ZyYMc7GK6jIeQZ99D'
-          ).then(
-               () => {
-               alert('Message sent successfully!');
-               },
-               (error) => {
-               console.log(error);
-               alert('Failed to send message');
-               }
-          );
+               const templateParams = {
+                    name: this.name,
+                    email: this.email,
+                    message: this.message,
+                    title: 'New Request'
+               };
+               this.loader = true;
+               emailjs.send(
+                    'service_1tc3znk',   // from EmailJS
+                    'template_kbl7uih',
+                    templateParams,
+                    'ZyYMc7GK6jIeQZ99D'
+               ).then(
+                    () => {
+                         this.loader = false;
+                         this.Result = true;
+                         this.name = '';
+                         this.email = '';
+                         this.message = '';
+                    },
+                    (error) => {
+                    this.loader = false;
+                    this.Resultfail = true;
+                    }
+               );
      }
 }

@@ -1,4 +1,7 @@
 <div class="maincontainer">
+     <div class="loadmain" *ngIf="loader">
+           <span class="loader"></span>
+     </div>
      <div class="navbardiv"> 
           <nav class="glass-navbar">
                <div class="mylogodiv">
@@ -8,7 +11,7 @@
                     <li class="nav-item active">Home</li>
                     <li class="nav-item" (click)="about()">About</li>
                     <li class="nav-item" (click)="mywor()">Work</li>
-                    <li class="nav-item"><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownload" download>Resume</a></li>
+                    <li class="nav-item"><a href="/images/Dhivagar-G-Immediate-Joiner.pdf" target="_blank" class="resumeDownload" download>Resume</a></li>
                </ul>
                <div class="MenuTab menu-icon" (click)="toggleMenu()">
                     <img src="/images/icons8-menu-50.svg" alt="Menu" class="menuimg">
@@ -26,7 +29,7 @@
                          <a (click)="Home()">Home</a>
                          <a (click)="about()">About</a>
                          <a (click)="mywor()">Work</a>
-                         <a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a>
+                         <a href="/images/Dhivagar-G-Immediate-Joiner.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a>
 
                          <div>
                               <footer>
@@ -45,14 +48,11 @@
                <div class="personal">
                     <div class="MynameHead slide-text" [@fadeIn]>Hi, I'm Dhivagar</div>
                     <div class="fade-up pt-2" >
-                         I’m a passionate Software Developer with over 3+ years of experience in building modern, scalable web applications. Skilled in Angular, React, JavaScript, and Core PHP, I focus on writing clean, maintainable code and crafting responsive interfaces that deliver seamless user experiences. I enjoy solving complex problems, optimizing performance, and creating reliable digital solutions that make an impact.
+                         I’m a passionate Software Developer with over 3+ years of experience in building modern, scalable web applications. Skilled in Angular, React, JavaScript, TypeScript, and Core PHP, I focus on writing clean, maintainable code and crafting responsive interfaces that deliver seamless user experiences. I enjoy solving complex problems, optimizing performance, and creating reliable digital solutions that make an impact.
                     </div>
                     
                </div>
                <div class="profile">
-                    <!-- <div class="myprofileimgdiv img-zoom">
-                         <img src="/images/logo_with_name.png" alt="MY Profile" class="myprofileimg">
-                    </div> -->
                     <div class="mainprofileweb img-zoom">
                          <div class="MyProfileDivweb"></div>
                          
@@ -134,6 +134,15 @@
                          <img src="/images/mysql-logo-svgrepo-com.svg" alt="MySQL Logo" class="skill-logo">
                          <div class="TextContentSk">MySQL</div>
                          </div>
+
+                         <div class="skill-card">
+                         <img src="/images/nodejs.png" alt="NodeJS Logo" class="skill-logo">
+                         <div class="TextContentSk">Node JS</div>
+                         </div>
+                         <div class="skill-card">
+                         <img src="/images/database.png" alt="MangoDB Logo" class="skill-logo">
+                         <div class="TextContentSk">MangoDB</div>
+                         </div>
                     </div>
                     </div>
                </div>
@@ -161,7 +170,8 @@
                                    <div class="d-grid">
                                    <button class="btn btn-custom" type="submit">Send Message</button>
                                    </div>
-
+                                   <div *ngIf="Result" class="success pt-4">Email Sent Successfully!</div>
+                                   <div *ngIf="Resultfail" class="failed pt-4">Email Not Sent!</div>
                               </div>
                          </div>
                     </div>
@@ -175,7 +185,7 @@
                          <div class="cursor" (click)="Home();">Home</div>
                          <div class="cursor" (click)="about();">About</div>
                          <div class="cursor" (click)="mywor()">Work</div>
-                         <div class="cursor" ><a href="/images/Dhivagar_G_2025.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a></div>
+                         <div class="cursor" ><a href="/images/Dhivagar-G-Immediate-Joiner.pdf" target="_blank" class="resumeDownloadfo" download>Resume</a></div>
                     </div>
                     <div class="mysocialdiv">
                          <a href="mailto:dhivagarg18@gmail.com" target="_blank">
