@@ -87,6 +87,11 @@ li {
      text-align: center;
      padding: 24px;
 }
+.workclr{
+     font-family:  'JosefinSans-Bold';
+     padding-bottom: 10px;
+     color: #2596be;
+}
 .work_heading{
      font-family:  'JosefinSans-Bold';
      font-size: 38px;
