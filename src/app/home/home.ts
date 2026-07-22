@@ -33,10 +33,13 @@ import { CommonModule } from '@angular/common';
 export class Home implements AfterViewInit{
      @ViewChild('box1') box1!: ElementRef;
      @ViewChild('box2') box2!: ElementRef;
+     @ViewChild('nameInput') nameInput!: ElementRef;
+     @ViewChild('emailInput') emailInput!: ElementRef;
+     @ViewChild('messageInput') messageInput!: ElementRef;
 
-  showBox1: boolean = false;
-  showBox2: boolean = false;
-  loader : boolean = false;
+     showBox1: boolean = false;
+     showBox2: boolean = false;
+     loader : boolean = false;
 
      ngAfterViewInit() {
      const observer = new IntersectionObserver((entries, obs) => {
@@ -82,6 +85,18 @@ export class Home implements AfterViewInit{
           Result = false;
           Resultfail = false;
           sendEmail() {
+               if (!this.name || this.name.trim() === '') {
+                    this.nameInput.nativeElement.focus();
+                    return;
+               }
+               if (!this.email || this.email.trim() === '') {
+                    this.emailInput.nativeElement.focus();
+                    return;
+               }
+               if (!this.message || this.message.trim() === '') {
+                    this.messageInput.nativeElement.focus();
+                    return;
+               }
                const templateParams = {
                     name: this.name,
                     email: this.email,
