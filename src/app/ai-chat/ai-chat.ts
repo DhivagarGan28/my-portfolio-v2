@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class AiChat {
      userMessage = '';
      reply = ''
+     results:any = ''
      chatLog: { role: string, content: string }[] = [];
 
      constructor(private http: HttpClient, public router:Router) {}
@@ -22,21 +23,16 @@ export class AiChat {
      }
      sendMessage() {
           if (!this.userMessage.trim()) return;
-
           const message = this.userMessage;
           this.chatLog.push({ role: 'User', content: message });
           this.userMessage = '';
-
           this.http.post<any>('https://vibe-b-backend.vercel.app/aichatbot', { message: message }).subscribe(
           (res) => {
                if(res.success == true){
-                    let result = res.result;
-                    if(result[1].status == 'completed' && result[1].content[0].type == 'output_text'){
-                         this.reply = result[1].content[0].text;
-                    }else{
-                         this.reply = 'No response!';
+                    this.results = res.result;
+                    if(this.results[0].type == 'output_text'){
+                         this.chatLog.push({ role: 'Bot', content: this.results[0].text });
                     }
-                    this.chatLog.push({ role: 'Bot', content: this.reply });
                }else{
                     this.chatLog.push({ role: 'Bot', content: 'Error: Could not get response.' });    
                }
