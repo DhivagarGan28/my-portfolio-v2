@@ -1,5 +1,8 @@
 <div class="chat-page">
-<div class="chat-header"><h2>AI Assistant</h2></div>
+<div class="chat-header"><h2>AI Assistant (Open AI)</h2>
+<span class="close" (click)="home()">X</span>
+</div>
+
 <div class="chat-body" #chatBody>
 <div
      *ngFor="let msg of chatLog"

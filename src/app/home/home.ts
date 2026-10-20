@@ -66,7 +66,9 @@ export class Home implements AfterViewInit{
      about(){
           this.router.navigate(['/about']);
      }
-
+     aichat(){
+          this.router.navigate(['/ai-chatbot']);
+     }
      Home(){
           window.scrollTo({ top: 0, behavior: 'smooth' });
      }  

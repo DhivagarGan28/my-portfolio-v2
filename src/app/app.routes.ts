@@ -8,5 +8,5 @@ export const routes: Routes = [
      {path :'', component: Home},
      {path :'work', component: Work},
      {path :'about', component: About},
-     {path :'aichat', component: AiChat},
+     {path :'ai-chatbot', component: AiChat},
 ];

@@ -19,6 +19,9 @@ export class About {
   about(){
       window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  aichat(){
+          this.router.navigate(['/ai-chatbot']);
+     }
    isMenuOpen = false;
 
     toggleMenu() {

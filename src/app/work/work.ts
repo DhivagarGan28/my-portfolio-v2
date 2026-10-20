@@ -20,6 +20,9 @@ constructor(public router:Router, private renderer: Renderer2){}
     about(){
       this.router.navigate(['/about']);
     }
+    aichat(){
+          this.router.navigate(['/ai-chatbot']);
+    }
     mywor(){
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

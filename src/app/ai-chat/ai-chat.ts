@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
      selector: 'app-ai-chat',
@@ -12,10 +13,13 @@ import { HttpClientModule, HttpHeaders  } from '@angular/common/http';
 })
 export class AiChat {
      userMessage = '';
+     reply = ''
      chatLog: { role: string, content: string }[] = [];
 
-     constructor(private http: HttpClient) {}
-
+     constructor(private http: HttpClient, public router:Router) {}
+     home(){
+          this.router.navigate(['/']);
+     }
      sendMessage() {
           if (!this.userMessage.trim()) return;
 
@@ -23,22 +27,19 @@ export class AiChat {
           this.chatLog.push({ role: 'User', content: message });
           this.userMessage = '';
 
-          const headers = new HttpHeaders({
-               'Content-Type': 'application/json',
-               'Authorization': 'Bearer sk-3ded2c76ba2845ff9c49fa811225f997'
-          });
-
-          const body = {
-                         "messages": [ 
-                              { "role": "user", "content": message }
-                              ],
-                         "model": "deepseek-chat",
-                    };
-
-          this.http.post<any>('https://api.deepseek.com/chat/completions', body, { headers }).subscribe(
+          this.http.post<any>('https://vibe-b-backend.vercel.app/aichatbot', { message: message }).subscribe(
           (res) => {
-               const reply = res.choices?.[0]?.message?.content || 'No response.';
-               this.chatLog.push({ role: 'Bot', content: reply });
+               if(res.success == true){
+                    let result = res.result;
+                    if(result[1].status == 'completed' && result[1].content[0].type == 'output_text'){
+                         this.reply = result[1].content[0].text;
+                    }else{
+                         this.reply = 'No response!';
+                    }
+                    this.chatLog.push({ role: 'Bot', content: this.reply });
+               }else{
+                    this.chatLog.push({ role: 'Bot', content: 'Error: Could not get response.' });    
+               }
           },
           (err) => {
                this.chatLog.push({ role: 'Bot', content: 'Error: Could not get response.' });
