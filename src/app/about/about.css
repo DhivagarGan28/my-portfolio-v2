@@ -204,6 +204,9 @@ footer{
      cursor: pointer;
 }
 @media screen and (max-width: 500px) {
+     .LinkSection{
+          gap:25px;
+     }
      .work{
           padding:24px 0px 0px 0px;
      }
